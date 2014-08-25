@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Component:</strong>
+  <%= @release.component %>
+</p>
+
+<p>
+  <strong>Jira fix version:</strong>
+  <%= @release.jira_fix_version %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @release.status %>
+</p>
+
+<p>
+  <strong>Dev start:</strong>
+  <%= @release.dev_start %>
+</p>
+
+<p>
+  <strong>Code freeze:</strong>
+  <%= @release.code_freeze %>
+</p>
+
+<p>
+  <strong>Qa start:</strong>
+  <%= @release.qa_start %>
+</p>
+
+<p>
+  <strong>Qa end:</strong>
+  <%= @release.qa_end %>
+</p>
+
+<p>
+  <strong>Planned release:</strong>
+  <%= @release.planned_release %>
+</p>
+
+<p>
+  <strong>Actual release:</strong>
+  <%= @release.actual_release %>
+</p>
+
+<p>
+  <strong>Reason for variance:</strong>
+  <%= @release.reason_for_variance %>
+</p>
+
+<p>
+  <strong>Release details:</strong>
+  <%= @release.release_details %>
+</p>
+
+
+<%= link_to 'Edit', edit_release_path(@release) %> |
+<%= link_to 'Back', releases_path %>

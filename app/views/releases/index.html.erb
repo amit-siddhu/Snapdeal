@@ -1,0 +1,45 @@
+<h1>Listing releases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Jira fix version</th>
+      <th>Status</th>
+      <th>Dev start</th>
+      <th>Code freeze</th>
+      <th>Qa start</th>
+      <th>Qa end</th>
+      <th>Planned release</th>
+      <th>Actual release</th>
+      <th>Reason for variance</th>
+      <th>Release details</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @releases.each do |release| %>
+      <tr>
+        <td><%= release.component %></td>
+        <td><%= release.jira_fix_version %></td>
+        <td><%= release.status %></td>
+        <td><%= release.dev_start %></td>
+        <td><%= release.code_freeze %></td>
+        <td><%= release.qa_start %></td>
+        <td><%= release.qa_end %></td>
+        <td><%= release.planned_release %></td>
+        <td><%= release.actual_release %></td>
+        <td><%= release.reason_for_variance %></td>
+        <td><%= release.release_details %></td>
+        <td><%= link_to 'Show', release %></td>
+        <td><%= link_to 'Edit', edit_release_path(release) %></td>
+        <td><%= link_to 'Destroy', release, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Release', new_release_path %>

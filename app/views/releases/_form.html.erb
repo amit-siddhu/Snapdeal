@@ -1,0 +1,61 @@
+<%= form_for(@release) do |f| %>
+  <% if @release.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@release.errors.count, "error") %> prohibited this release from being saved:</h2>
+
+      <ul>
+      <% @release.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :component %><br>
+    <%= f.text_field :component %>
+  </div>
+  <div class="field">
+    <%= f.label :jira_fix_version %><br>
+    <%= f.text_field :jira_fix_version %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :dev_start %><br>
+    <%= f.date_select :dev_start %>
+  </div>
+  <div class="field">
+    <%= f.label :code_freeze %><br>
+    <%= f.date_select :code_freeze %>
+  </div>
+  <div class="field">
+    <%= f.label :qa_start %><br>
+    <%= f.date_select :qa_start %>
+  </div>
+  <div class="field">
+    <%= f.label :qa_end %><br>
+    <%= f.text_field :qa_end %>
+  </div>
+  <div class="field">
+    <%= f.label :planned_release %><br>
+    <%= f.date_select :planned_release %>
+  </div>
+  <div class="field">
+    <%= f.label :actual_release %><br>
+    <%= f.date_select :actual_release %>
+  </div>
+  <div class="field">
+    <%= f.label :reason_for_variance %><br>
+    <%= f.text_field :reason_for_variance %>
+  </div>
+  <div class="field">
+    <%= f.label :release_details %><br>
+    <%= f.text_field :release_details %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
